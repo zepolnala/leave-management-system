@@ -194,18 +194,29 @@ Employees can submit a leave request.
 
 ---
 
-## 6. Workload Estimation
+## 6. Workload Estimation  (Pro Solution)
 
-| Task                        | Effort (Hours) |
-|-----------------------------|---------------|
-| Database setup & migrations | 4h            |
-| API development (CRUD)      | 4h            |
-| Authentication (JWT)        | 4h            |
-| Unit Testing                | 2h            |
-| Deployment (CI/CD)          | 4h            |
-| **Total Estimate**          | **18hs**       |
+| **Task**                                  | **Effort (Hours)** |
+|-------------------------------------------|--------------------|
+| **Database setup & migrations**           | 4h  |
+| **API development (CRUD for Leave Requests & Policies)** | 6h  |
+| **Authentication (JWT-based User Management)** | 6h  |
+| **Unit & Integration Testing**            | 4h  |
+| **Deployment & CI/CD Pipeline Setup**     | 4h  |
+| **Multi-Tenancy Implementation** (via Docker – separate instances per client) | 10h  |
+| **Alternative Multi-Tenancy Implementation** (Shared DB, tenant-based access) | 16h  |
+| **Documentation & Final Review**          | 2h  |
+| **Total Estimated Effort** *(without multi-tenancy)* | **26h** |
+| **Total Estimated Effort** *(with multi-tenancy via Docker)* | **36h** |
+| **Total Estimated Effort** *(with multi-tenancy via shared DB)* | **42h** |
+| ** (extra)Frontend Implementation (React Native App)** | 8h  |
 
+---
 
+### ** Deployment Considerations**
+- **For Single-Tenant Deployment:** Host backend as a single FastAPI instance with one PostgreSQL database.
+- **For Multi-Tenancy via Docker:** Each organization gets a separate backend container with an independent database. 
+- **For Multi-Tenancy via Shared DB:** Implement a **tenant_id** column in all tables, with row-level security (RLS).
 
 ---
 
