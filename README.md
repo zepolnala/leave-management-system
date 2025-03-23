@@ -27,8 +27,6 @@ Before jumping into implementation, here are some key assumptions and questions 
 4. **Notifications**  
    - Should the system send email/Slack notifications for approvals and rejections?  
 
-These questions will shape the final implementation, ensuring it meets real-world needs.
-
 ---
 
 ## 2. Data Model Design
