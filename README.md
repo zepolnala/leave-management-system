@@ -177,7 +177,6 @@ Employees can submit a leave request.
 
 ### **Step 3: Authentication & Authorization** 
 - Implement JWT authentication for employees and admins.
-- Restrict leave approval to admin users.
 
 ### **Step 4: Testing & Deployment**
 - Unit tests (pytest) for API endpoints.
@@ -185,14 +184,14 @@ Employees can submit a leave request.
 - Deploy to **AWS/GCP/Supabase** with auto-scaling.
 
 ### **Step 5 (optional): Enhancements** 
-- Authentication & Authorization (JWT-based login).
+- Improve Authentication & Authorization (JWT-based login).
 - Organization-level multi-tenancy.
 - Email/Slack notifications for leave approvals.
 
 
 ---
 
-## 6. Workload Estimation  (Pro Solution)
+## 6. Workload Estimation  (POC)
 
 | **Task**                                  | **Effort (Hours)** |
 |-------------------------------------------|--------------------|
