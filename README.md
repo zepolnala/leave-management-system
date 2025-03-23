@@ -70,7 +70,7 @@ The **Leave Management System** consists of three main tables:
 - **Users** belong to **Organizations**.
 - **Users** submit **LeaveRequests**.
 - **Admins** approve/reject **LeaveRequests**.
-- **Organizations** define **LeavePolicies**.cuand
+- **Organizations** define **LeavePolicies**.
 
 ## 3. API Design
 
