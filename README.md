@@ -151,11 +151,36 @@ Employees can submit a leave request.
 ## 4. High-Level Architecture
 
 ### Components:
-- **FastAPI Backend** - Handles API requests, authentication, and business logic.
-- **PostgreSQL Database (Supabase)** - Stores users, leave requests, and policies and organizations
-- **Auth Service (JWT-based)** - Ensures secure access for employees and admins.
-- **API Gateway** - Manages rate limiting and security for multi-tenant access.
-- **Job Scheduler** - Handles leave balance updates and notifications.
+                        ┌──────────────────────┐
+                        │      Frontend        │
+                        │  (React Native App)  │
+                        └─────────┬────────────┘
+                                  │
+                                  ▼
+                        ┌──────────────────────┐
+                        │    API Gateway       │
+                        │ (Rate Limiting + CORS│
+                        └─────────┬────────────┘
+                                  │
+                                  ▼
+                    ┌────────────────────────────┐
+                    │         FastAPI            │
+                    │   - Authentication (JWT)   │
+                    │   - Leave Logic (CRUD)     │
+                    └─────────┬──────────┬───────┘
+                              │          │
+                              ▼          ▼
+                 ┌────────────────┐   ┌───────────────┐
+                 │ PostgreSQL DB  │   │ Redis (Optional│
+                 │ (via Supabase) │   │   Caching)     │
+                 └────────────────┘   └───────────────┘
+                              │
+                              ▼
+                   ┌─────────────────────┐
+                   │ Supabase Dashboard  │
+                   │ (Org/User Management│
+                   └─────────────────────┘
+
 
 ### Scalability Considerations:
 ✅ **Load Balancing:** Use multiple API instances behind a load balancer.  
