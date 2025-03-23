@@ -159,7 +159,7 @@ Employees can submit a leave request.
                                   ▼
                         ┌──────────────────────┐
                         │    API Gateway       │
-                        │ (Rate Limiting + CORS│
+                        │ (Rate Limiting       │
                         └─────────┬────────────┘
                                   │
                                   ▼
@@ -172,12 +172,12 @@ Employees can submit a leave request.
                               ▼          ▼
                  ┌────────────────┐   ┌───────────────┐
                  │ PostgreSQL DB  │   │ Redis (Optional│
-                 │ (via Supabase) │   │   Caching)     │
+                 │                │      Caching)     │
                  └────────────────┘   └───────────────┘
                               │
                               ▼
                    ┌─────────────────────┐
-                   │ Supabase Dashboard  │
+                   │ DB Dashboard        │
                    │ (Org/User Management│
                    └─────────────────────┘
 
